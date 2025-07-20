@@ -122,7 +122,7 @@ $variable = mixed
 ```
 
 The current bahavior of pipe operator when used with variable is wery poorly described in RFC (but covered with test - https://github.com/php/php-src/blob/master/Zend/tests/pipe_operator/mixed_callable_call.phpt#L73). While 8.5 is not released, we can make exclusion for piping to variable to use it only for assignment. When using for piping to callble, stored in variable, it could be wrapped with arrow function. In this way we even not need to introduce new operator, and can reuse pipe operator for assignment.
-If we prefer to use |> as assignment operator, we should change implementation before 8.5 release. In this case if want call closure from variable, it should be wrapped with oter closure.
+If we prefer to use |> as assignment operator, we should change implementation before 8.5 release. In this case if want call closure from variable, it should be wrapped with other closure.
 
 ```
 $times29 = function(int $x): int {
@@ -147,10 +147,10 @@ There have long been known contradictions between mathematicians and programmers
 
 If chosing |>= as operator, we can also create family of pipeline assignment operators.
 
-| New operator  | Equialent   |
-|---------------|-------------|
-| `$a |>= $b`   | `$b = $a`   |
-| `$a |>.= $b`  | `$b .= $a`  |
-| `$a |>+= $b`  | `$b += $a`  |
-| `$a |>-= $b`  | `$b -= $a`  |
-| `$a |>??= $b` | `$b ??= $a` |
+| New operator      | Equialent       |
+|-------------------|-----------------|
+| ```$a |>= $b```   | ```$b = $a```   |
+| ```$a |>.= $b```  | ```$b .= $a```  |
+| ```$a |>+= $b```  | ```$b += $a```  |
+| ```$a |>-= $b```  | ```$b -= $a```  |
+| ```$a |>??= $b``` | ```$b ??= $a``` |
