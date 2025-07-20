@@ -147,10 +147,10 @@ There have long been known contradictions between mathematicians and programmers
 
 If chosing |>= as operator, we can also create family of pipeline assignment operators.
 
-| New operator      | Equialent       |
-|-------------------|-----------------|
-| ```$a |>= $b```   | ```$b = $a```   |
-| ```$a |>.= $b```  | ```$b .= $a```  |
-| ```$a |>+= $b```  | ```$b += $a```  |
-| ```$a |>-= $b```  | ```$b -= $a```  |
-| ```$a |>??= $b``` | ```$b ??= $a``` |
+| New operator   | Equialent   |
+|----------------|-------------|
+| `$a \|>= $b`   | `$b = $a`   |
+| `$a \|>.= $b`  | `$b .= $a`  |
+| `$a \|>+= $b`  | `$b += $a`  |
+| `$a \|>-= $b`  | `$b -= $a`  |
+| `$a \|>??= $b` | `$b ??= $a` |
