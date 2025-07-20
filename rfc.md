@@ -142,10 +142,28 @@ There have long been known contradictions between mathematicians and programmers
 * Linux command line has redirection operator > that can be treated as file content assignment (`ls -l | grep ".txt" | wc -l > result`)
 * C++ iostream uses >> operator for saving value from stdin to variable
 
+# Backward Incompatible Changes
+
+* `|>=` version of operator should not create backward incompatible changes, as currently causes syntax error.
+* `|>` conflicts with one rare use case for pipe assignment operator, as described earlier.
+
+# RFC Impact
+
+## Perfomance
+As new operator is just another syntax for assignemnt operator, it's usage should lead to exactly same bytecode, so no perfomance changes are expected.
+
+## To the Ecosystem
+All language tools should be extended to use new syntax.
+
+## To Existing Extensions
+Not affected
+
+## To SAPIs
+Not affected
 
 # Further scope
 
-If chosing |>= as operator, we can also create family of pipeline assignment operators.
+If chosing `|>=` as operator, we can also create family of pipeline assignment operators.
 
 | New operator   | Equialent   |
 |----------------|-------------|
